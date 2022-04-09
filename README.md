@@ -1,2 +1,3 @@
 # STN
-Studencki transporter napojów
+## Studencki transporter napojów
+Projekt zespołowy EKA 2022.
