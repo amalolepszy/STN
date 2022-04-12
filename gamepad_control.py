@@ -15,12 +15,12 @@ class GamepadControl():
 
   def ListGamepadEvents(): #listowanie inputow
     while(1):
-      events = SterowanieZdalne.GetGamepadEvent()
+      events = GamepadControl.GetGamepadEvent()
       for event in events:
         print(event.ev_type, event.code, event.state)
       
 
 
 if __name__ == "__main__":
-  SterowanieZdalne.ListGamepads()
-  SterowanieZdalne.ListGamepadEvents()
+  GamepadControl.ListGamepads()
+  GamepadControl.ListGamepadEvents()
