@@ -25,15 +25,16 @@ class GamepadControl():
       #lewo-prawo
       if(event.ev_type == "ABSOLUTE" and event.code == "ABS_X"):
         if(event.code > 27000): #prawo
-          return "right"
+          dir = "right"
         elif(event.code < -27000): #lewo
-          return "left"
+          dir = "left"
       #gora-dol
       if(event.ev_type == "ABSOLUTE" and event.code == "ABS_Y"):
         if(event.code > 27000): #dol
-          return "back"
+          dir = "back"
         elif(event.code < -27000): #gora
-          return "forward"
+          dir = "forward"
+    return dir
 
   def LogGamepadDirection():
     print(GamepadControl.GetGamepadDirection())
