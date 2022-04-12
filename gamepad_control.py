@@ -19,8 +19,8 @@ class GamepadControl():
       for event in events:
         print(event.ev_type, event.code, event.state)
       
-  def GetGamepadDirection(this):
-    events = this.GetGamepadEvent()
+  def GetGamepadDirection():
+    events = GamepadControl.GetGamepadEvent()
     for event in events:
       #lewo-prawo
       if(event.ev_type == "ABSOLUTE" and event.code == "ABS_X"):
