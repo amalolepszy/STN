@@ -33,9 +33,9 @@ class GamepadControl():
       #gora-dol
       if(event.ev_type == "Absolute" and event.code == "ABS_Y"):
         if(event.state > 15000): #gora
-          dir = "forward"
-        elif(event.state < -15000): #dol
           dir = "back"
+        elif(event.state < -15000): #dol
+          dir = "forward"
     return dir
 
   def LogGamepadDirection():
