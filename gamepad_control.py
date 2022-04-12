@@ -1,5 +1,4 @@
 from __future__ import print_function
-from re import I
 from inputs import get_gamepad
 from inputs import devices
 
