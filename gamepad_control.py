@@ -5,23 +5,23 @@ from inputs import devices
 class GamepadControl():
   """[002] Klasa zawierająca funkcje do sterowania zdalnego za pomocą pada x360"""
   
-  def ListGamepads(): #listowanie mozliwego sprzetu
+  def listGamepads(self): #listowanie mozliwego sprzetu
     print("Detected devices:\n")
     for device in devices:
       print(device)
 
-  def GetGamepadEvent():
+  def _getGamepadEvent(self):
     return get_gamepad()
 
-  def LogGamepadEvents(): #listowanie inputow
+  def logGamepadEvents(self): #listowanie inputow
     while(1):
-      events = GamepadControl.GetGamepadEvent()
+      events = self._getGamepadEvent()
       for event in events:
         print(event.ev_type, event.code, event.state)
       
-  def GetGamepadDirection():
+  def getGamepadDirection(self):
     dir = ""
-    events = GamepadControl.GetGamepadEvent()
+    events = self._getGamepadEvent()
     for event in events:
       #lewo-prawo
       if(event.ev_type == "Absolute" and event.code == "ABS_X"):
@@ -37,10 +37,11 @@ class GamepadControl():
           dir = "forward"
     return dir
 
-  def LogGamepadDirection():
+  def logGamepadDirection(self):
     while(1):
-      print(GamepadControl.GetGamepadDirection())
+      print(self.getGamepadDirection())
 
 if __name__ == "__main__":
-  GamepadControl.ListGamepads()
-  GamepadControl.LogGamepadDirection()
+  Control = GamepadControl()
+  Control.listGamepads()
+  Control.logGamepadDirection()
