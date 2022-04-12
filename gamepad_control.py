@@ -1,4 +1,5 @@
 from __future__ import print_function
+from re import I
 from inputs import get_gamepad
 from inputs import devices
 
@@ -13,33 +14,33 @@ class GamepadControl():
   def GetGamepadEvent():
     return get_gamepad()
 
-  def LogGamepadEvents(this): #listowanie inputow
+  def LogGamepadEvents(): #listowanie inputow
     while(1):
-      events = this.GetGamepadEvent()
+      events = GamepadControl.GetGamepadEvent()
       for event in events:
         print(event.ev_type, event.code, event.state)
       
   def GetGamepadDirection():
     dir = ""
-    while(1):
-      events = GamepadControl.GetGamepadEvent()
-      for event in events:
-        #lewo-prawo
-        if(event.ev_type == "ABSOLUTE" and event.code == "ABS_X"):
-          if(event.code > 27000): #prawo
-            dir = "right"
-          elif(event.code < -27000): #lewo
-            dir = "left"
-        #gora-dol
-        if(event.ev_type == "ABSOLUTE" and event.code == "ABS_Y"):
-          if(event.code > 27000): #dol
-            dir = "back"
-          elif(event.code < -27000): #gora
-            dir = "forward"
+    events = GamepadControl.GetGamepadEvent()
+    for event in events:
+      #lewo-prawo
+      if(event.ev_type == "Absolute" and event.code == "ABS_X"):
+        if(event.state > 15000): #prawo
+          dir = "right"
+        elif(event.state < -15000): #lewo
+          dir = "left"
+      #gora-dol
+      if(event.ev_type == "Absolute" and event.code == "ABS_Y"):
+        if(event.state > 15000): #gora
+          dir = "forward"
+        elif(event.state < -15000): #dol
+          dir = "back"
     return dir
 
   def LogGamepadDirection():
-    print(GamepadControl.GetGamepadDirection())
+    while(1):
+      print(GamepadControl.GetGamepadDirection())
 
 if __name__ == "__main__":
   GamepadControl.ListGamepads()
