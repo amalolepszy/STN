@@ -35,8 +35,8 @@ class GamepadControl():
         elif(event.code < -27000): #gora
           return "forward"
 
-  def LogGamepadDirection(this):
-    print(this.GetGamepadDirection())
+  def LogGamepadDirection():
+    print(GamepadControl.GetGamepadDirection())
 
 if __name__ == "__main__":
   GamepadControl.ListGamepads()
