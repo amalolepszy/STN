@@ -26,3 +26,7 @@ For now, clone it from git and launch from command line.
 - Paulina Poręba
 - Julia Kurzawa
 
+## Supervisor
+
+ - Damian Kociołek
+
