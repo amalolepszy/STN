@@ -24,16 +24,16 @@ class MotorDriver(object):
     GPIO.setup(mPins.MOTOR_RIGHT_IN2, GPIO.OUT)
 
     #EN pins
-    speedRight = GPIO.PWM(mPins.MOTOR_RIGHT_EN, 1000)
-    speedLeft = GPIO.PWM(mPins.MOTOR_LEFT_EN, 1000)
+    self.speedRight = GPIO.PWM(mPins.MOTOR_RIGHT_EN, 1000)
+    self.speedLeft = GPIO.PWM(mPins.MOTOR_LEFT_EN, 1000)
 
     #default values - stand still
     GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.LOW)
     GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.LOW)
     GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.LOW)
     GPIO.output(mPins.MOTOR_RIGHT_IN2, GPIO.LOW)
-    speedRight.start(0)
-    speedLeft.start(0)
+    self.speedRight.start(0)
+    self.speedLeft.start(0)
 
 
   def _goForward(self):
@@ -82,25 +82,27 @@ class MotorDriver(object):
     self.initMotorPins()
     #forward
     if(direction == "forward"):
-      self.goForward()
-      self.RampSpeed()
+      self._goForward()
+      self._rampSpeed()
     #reverse
     elif(direction == "reverse"):
-      self.goReverse()
-      self.RampSpeed()
+      self._goReverse()
+      self._rampSpeed()
     #left
     elif(direction == "left"):
-      self.goLeft()
-      self.RampSpeed(70)
+      self._goLeft()
+      self._rampSpeed(70)
     #right
     elif(direction == "right"):
-      self.goRight()
-      self.RampSpeed(70)
+      self._goRight()
+      self._rampSpeed(70)
 
-
-if __name__ == "__main__":
+def main():
   parser = argparse.ArgumentParser()
   parser.add_argument('direction')
   args = parser.parse_args()
   motorDriver = MotorDriver()
   motorDriver.goDirection(args.direction)
+
+if __name__ == "__main__":
+  main()
