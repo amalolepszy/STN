@@ -1,5 +1,4 @@
-
-import RPI.GPIO as IO
+import RPi.GPIO as IO
 import time
 import argparse
 from rpi_pins import motorPins as mPins
