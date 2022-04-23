@@ -1,4 +1,4 @@
-import RPi.GPIO as IO
+import RPi.GPIO as GPIO
 import time
 import argparse
 from rpi_pins import motorPins as mPins
@@ -13,8 +13,8 @@ class MotorDriver(object):
     IN pins are logic GPIO.OUT values, used for steering the direction.
     EN pins are used for initializing the speed of the motors by modulating the PWM signal.
     """
-    IO.setwarnings(False)
-    IO.setmode(IO.BCM)
+    GPIO.setwarnings(False)
+    GPIO.setmode(IO.BCM)
 
     #IN pins
     GPIO.setup(mPins.MOTOR_LEFT_IN1, GPIO.OUT)
