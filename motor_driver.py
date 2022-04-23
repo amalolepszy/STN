@@ -23,6 +23,8 @@ class MotorDriver(object):
     GPIO.setup(mPins.MOTOR_RIGHT_IN2, GPIO.OUT)
 
     #EN pins
+    GPIO.setup(mPins.MOTOR_RIGHT_EN, GPIO.OUT)
+    GPIO.setup(mPins.MOTOR_LEFT_EN, GPIO.OUT)
     self.speedRight = GPIO.PWM(mPins.MOTOR_RIGHT_EN, 1000)
     self.speedLeft = GPIO.PWM(mPins.MOTOR_LEFT_EN, 1000)
 
