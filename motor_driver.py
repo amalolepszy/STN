@@ -14,7 +14,7 @@ class MotorDriver(object):
     EN pins are used for initializing the speed of the motors by modulating the PWM signal.
     """
     GPIO.setwarnings(False)
-    GPIO.setmode(IO.BCM)
+    GPIO.setmode(GPIO.BCM)
 
     #IN pins
     GPIO.setup(mPins.MOTOR_LEFT_IN1, GPIO.OUT)
