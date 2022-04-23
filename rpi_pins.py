@@ -1,4 +1,4 @@
-class MotorPins:
+class motorPins:
   """Class initializing pins used for the L298N DC motor driver.
 
       EN - Enable:
@@ -24,7 +24,7 @@ class MotorPins:
   MOTOR_LEFT_IN1_PIN = 17   #in3
   MOTOR_LEFT_IN2_PIN = 18   #in4
 
-class SensorPins:
+class sensorPins:
   """Class initializing pins used for the IR sensors.
   Placement of the sensors:
                                │
