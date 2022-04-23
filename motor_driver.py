@@ -3,7 +3,7 @@ import time
 import argparse
 from rpi_pins import motorPins as mPins
 
-class MotorDriver(object):
+class MotorDriver():
   speedRight = 0
   speedLeft = 0
 
