@@ -1,8 +1,3 @@
-import RPI.GPIO as IO
-
-IO.setwarnings(False)
-IO.setmode(IO.BCM)
-
 class MotorPins:
   """Class initializing pins used for the L298N DC motor driver.
 
