@@ -42,6 +42,7 @@ class MotorDriver(object):
     GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.LOW)
     GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.HIGH)
     GPIO.output(mPins.MOTOR_RIGHT_IN2, GPIO.LOW)
+    print("[DEBUG] Going forward.")
 
 
   def _goReverse(self):
@@ -49,6 +50,7 @@ class MotorDriver(object):
     GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.HIGH)
     GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.LOW)
     GPIO.output(mPins.MOTOR_RIGHT_IN2, GPIO.HIGH)
+    print("[DEBUG] Going reverse.")
 
 
   def _goRight(self):
@@ -56,6 +58,7 @@ class MotorDriver(object):
     GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.LOW)
     GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.LOW)
     GPIO.output(mPins.MOTOR_RIGHT_IN2, GPIO.LOW)
+    print("[DEBUG] Going right.")
 
 
   def _goLeft(self):
@@ -63,6 +66,7 @@ class MotorDriver(object):
     GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.LOW)
     GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.HIGH)
     GPIO.output(mPins.MOTOR_RIGHT_IN2, GPIO.LOW)
+    print("[DEBUG] Going left.")
 
 
   def _rampSpeed(self, speed = 100):
