@@ -38,31 +38,31 @@ class MotorDriver(object):
 
 
   def _goForward(self):
-    mPins.MOTOR_LEFT_IN1(GPIO.HIGH)
-    mPins.MOTOR_LEFT_IN2(GPIO.LOW)
-    mPins.MOTOR_RIGHT_IN1(GPIO.HIGH)
-    mPins.MOTOR_RIGHT_IN2(GPIO.LOW)
+    GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.HIGH)
+    GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.LOW)
+    GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.HIGH)
+    GPIO.output(mPins.MOTOR_RIGHT_IN2, GPIO.LOW)
 
 
   def _goReverse(self):
-    mPins.MOTOR_LEFT_IN1(GPIO.LOW)
-    mPins.MOTOR_LEFT_IN2(GPIO.HIGH)
-    mPins.MOTOR_RIGHT_IN1(GPIO.LOW)
-    mPins.MOTOR_RIGHT_IN2(GPIO.HIGH)
+    GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.LOW)
+    GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.HIGH)
+    GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.LOW)
+    GPIO.output(mPins.MOTOR_RIGHT_IN2, GPIO.HIGH)
 
 
   def _goRight(self):
-    mPins.MOTOR_LEFT_IN1(GPIO.HIGH)
-    mPins.MOTOR_LEFT_IN2(GPIO.LOW)
-    mPins.MOTOR_RIGHT_IN1(GPIO.LOW)
-    mPins.MOTOR_RIGHT_IN2(GPIO.LOW)
+    GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.HIGH)
+    GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.LOW)
+    GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.LOW)
+    GPIO.output(mPins.MOTOR_RIGHT_IN2, GPIO.LOW)
 
 
   def _goLeft(self):
-    mPins.MOTOR_LEFT_IN1(GPIO.LOW)
-    mPins.MOTOR_LEFT_IN2(GPIO.LOW)
-    mPins.MOTOR_RIGHT_IN1(GPIO.HIGH)
-    mPins.MOTOR_RIGHT_IN2(GPIO.LOW)
+    GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.LOW)
+    GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.LOW)
+    GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.HIGH)
+    GPIO.output(mPins.MOTOR_RIGHT_IN2, GPIO.LOW)
 
 
   def _rampSpeed(self, speed = 100):
