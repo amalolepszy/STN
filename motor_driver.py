@@ -78,7 +78,7 @@ class MotorDriver(object):
 
 
   def goDirection(self, direction):
-    self.initMotorPins()
+    self._initMotorPins()
     #forward
     if(direction == "forward"):
       self._goForward()
