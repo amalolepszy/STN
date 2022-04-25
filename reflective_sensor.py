@@ -6,27 +6,27 @@ class ReflectiveSensor:
   """Class used for controlling and setting up the reflective sensors.
      Callback methods are used for interrupts.
   """
-  def frontLeftCloseCallback(self):
+  def frontLeftCloseCallback(self, channel):
     print("Front Left Close Sensor triggered")
 
 
-  def frontLeftFarCallback(self):
+  def frontLeftFarCallback(self, channel):
     print("Front Left Far Sensor triggered")
 
 
-  def frontRightClose(self):
+  def frontRightClose(self, channel):
     print("Front Right Close Sensor triggered")
 
 
-  def frontRightFarCallback(self):
+  def frontRightFarCallback(self, channel):
     print("Front Right Far Sensor triggered")
 
 
-  def backRightCallback(self):
+  def backRightCallback(self, channel):
     print("Back Right Sensor triggered")
 
 
-  def backLeftCallback(self):
+  def backLeftCallback(self, channel):
     print("Back Left Close Sensor triggered")  
 
 
@@ -69,6 +69,7 @@ class ReflectiveSensor:
     Returns:
         int : 1 when light gets reflected, 0 when nothing to reflect
     """
+    print(GPIO.input(int(sensorPin)))
     return GPIO.input(int(sensorPin))
 
 def main():
