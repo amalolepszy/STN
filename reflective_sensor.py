@@ -69,7 +69,7 @@ class ReflectiveSensor:
     Returns:
         int : 1 when light gets reflected, 0 when nothing to reflect
     """
-    return GPIO.input(sensorPin)
+    return GPIO.input(int(sensorPin))
 
 def main():
   #argument parser for debugging
