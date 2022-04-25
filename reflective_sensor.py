@@ -79,8 +79,8 @@ def main():
 
   #testing sensor
   RSensor = ReflectiveSensor()
-  RSensor.getStatus(args.sensorPin)
   RSensor.initSensorPins()
+  RSensor.getStatus(args.sensorPin)
   while(1):
     pass
 
