@@ -20,7 +20,7 @@ class GamepadControl():
         print(event.ev_type, event.code, event.state)
       
   def getGamepadDirection(self):
-    dir = ""
+    dir = "forward"
     events = self._getGamepadEvent()
     for event in events:
       #lewo-prawo
