@@ -1,6 +1,9 @@
 from gamepad_control import GamepadControl
 from motor_driver import MotorDriver
+import RPi.GPIO as GPIO
 
+from inputs import get_gamepad
+from inputs import devices
 
 
 class LineFollower:
