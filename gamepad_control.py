@@ -4,7 +4,7 @@ from inputs import devices
 
 class GamepadControl():
   """[002] Klasa zawierająca funkcje do sterowania zdalnego za pomocą pada x360"""
-  lastDir = ""
+  lastDir = "forward"
   def listGamepads(self): #listowanie mozliwego sprzetu
     print("Detected devices:\n")
     for device in devices:
@@ -20,7 +20,7 @@ class GamepadControl():
         print(event.ev_type, event.code, event.state)
       
   def getGamepadDirection(self):
-    dir = "forward"
+    dir = ""
     events = self._getGamepadEvent()
     for event in events:
       #lewo-prawo
