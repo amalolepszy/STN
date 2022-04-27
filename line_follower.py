@@ -6,15 +6,14 @@ from inputs import get_gamepad
 from inputs import devices
 
 
-class LineFollower():
+class LineFollower(GamepadControl):
   """Main class used for controlling the line follower.
   """
   def useGamePad(self):
     print("gowno")
-    gamepadControl = GamepadControl()
-    dir = gamepadControl.getGamepadDirection()
+    dir = self.getGamepadDirection()
     print(dir)
-    MotorDriver.goDirection(dir)
+    #MotorDriver.goDirection(dir)
 
 
 
