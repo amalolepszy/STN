@@ -12,10 +12,7 @@ class LineFollower:
   def useGamePad(self):
     MotorDriver.goDirection(GamepadControl.getGamepadDirection())
 
-def main():
-  lineFollower = LineFollower()
-  while(True):
-    lineFollower.useGamePad()
+
 
 if __name__ == "main":
-  main()
+  LineFollower.useGamePad()
