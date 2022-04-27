@@ -43,7 +43,7 @@ class sensorPins:
   FRONT_LEFT_CLOSE = 1
   FRONT_LEFT_FAR = 2
   #front right
-  FRONT_RIGH_CLOSE = 3
+  FRONT_RIGHT_CLOSE = 3
   FRONT_RIGHT_FAR = 4
   #back
   BACK_RIGHT = 5
