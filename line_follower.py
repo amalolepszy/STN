@@ -16,8 +16,7 @@ def main():
   parser.add_argument('UseGamePad')
   lineFollower = LineFollower()
   args = parser.parse_args()
-  if('UseGamePad' in args):
-    lineFollower.useGamePad()
+  lineFollower.useGamePad()
 
 if __name__ == "main":
   main()
