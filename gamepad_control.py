@@ -32,7 +32,7 @@ class GamepadControl():
       #gora-dol
       if(event.ev_type == "Absolute" and event.code == "ABS_Y"):
         if(event.state > 15000): #gora
-          dir = "back"
+          dir = "reverse"
         elif(event.state < -15000): #dol
           dir = "forward"
     return dir
