@@ -15,4 +15,5 @@ class LineFollower:
 
 
 if __name__ == "main":
-  LineFollower.useGamePad()
+  while(1):
+    LineFollower.useGamePad()
