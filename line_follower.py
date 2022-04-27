@@ -1,9 +1,9 @@
 from gamepad_control import GamepadControl
-from motor_driver import MotorDriver
-import RPi.GPIO as GPIO
+#from motor_driver import MotorDriver
+#import RPi.GPIO as GPIO
 
-from inputs import get_gamepad
-from inputs import devices
+#from inputs import get_gamepad
+#from inputs import devices
 
 
 class LineFollower(GamepadControl):
@@ -16,8 +16,10 @@ class LineFollower(GamepadControl):
     #MotorDriver.goDirection(dir)
 
 
-
-if __name__ == "main":
+def main():
   lineFollower = LineFollower()
-  while(1):
-    lineFollower.useGamePad()
+  lineFollower.useGamePad()
+
+if __name__ == "__main__":
+  main()
+
