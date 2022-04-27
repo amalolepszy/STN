@@ -6,7 +6,7 @@ from inputs import get_gamepad
 from inputs import devices
 
 
-class LineFollower():
+class LineFollower(MotorDriver, GamepadControl):
   """Main class used for controlling the line follower.
   """
   def useGamePad(self):
