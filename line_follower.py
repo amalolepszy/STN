@@ -7,12 +7,12 @@ class LineFollower:
   """Main class used for controlling the line follower.
   """
   def useGamePad(self):
-    while(1):
-      MotorDriver.goDirection(GamepadControl.getGamepadDirection())
+    MotorDriver.goDirection(GamepadControl.getGamepadDirection())
 
 def main():
   lineFollower = LineFollower()
-  lineFollower.useGamePad()
+  while(True):
+    lineFollower.useGamePad()
 
 if __name__ == "main":
   main()
