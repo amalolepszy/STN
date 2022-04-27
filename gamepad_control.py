@@ -35,6 +35,8 @@ class GamepadControl():
           dir = "reverse"
         elif(event.state < -15000): #dol
           dir = "forward"
+    if dir == "":
+      dir = "none"
     return dir
 
   def logGamepadDirection(self):
