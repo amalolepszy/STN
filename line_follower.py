@@ -18,5 +18,6 @@ class LineFollower(MotorDriver, GamepadControl):
 
 
 if __name__ == "main":
+  lineFollower = LineFollower()
   while(1):
-    LineFollower.useGamePad()
+    lineFollower.useGamePad()
