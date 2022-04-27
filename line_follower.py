@@ -11,7 +11,8 @@ class LineFollower():
   """
   def useGamePad(self):
     print("gowno")
-    dir = GamepadControl.getGamepadDirection()
+    gamepadControl = GamepadControl()
+    dir = gamepadControl.getGamepadDirection()
     print(dir)
     MotorDriver.goDirection(dir)
 
@@ -19,4 +20,5 @@ class LineFollower():
 
 if __name__ == "main":
   lineFollower = LineFollower()
-  lineFollower.useGamePad()
+  while(1):
+    lineFollower.useGamePad()
