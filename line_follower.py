@@ -10,7 +10,7 @@ class LineFollower(MotorDriver, GamepadControl):
   """Main class used for controlling the line follower.
   """
   def useGamePad(self):
-    print(gowno)
+    print("gowno")
     dir = self.getGamepadDirection()
     print(dir)
     self.goDirection(dir)
