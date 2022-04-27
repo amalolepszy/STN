@@ -45,3 +45,4 @@ if __name__ == "__main__":
   Control = GamepadControl()
   Control.listGamepads()
   Control.logGamepadDirection()
+  
