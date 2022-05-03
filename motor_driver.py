@@ -106,6 +106,8 @@ class MotorDriver():
       elif(direction == "right"):
         self._goRight()
         self._rampSpeed(70)
+      
+      self.lastDir = direction
 
 def main():
   parser = argparse.ArgumentParser()
