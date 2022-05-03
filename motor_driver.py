@@ -79,7 +79,7 @@ class MotorDriver():
     while(x <= speed):
       self.speedRight.ChangeDutyCycle(x)
       self.speedLeft.ChangeDutyCycle(x)
-      x += 2
+      x += 10
       time.sleep(0.001)
 
 
