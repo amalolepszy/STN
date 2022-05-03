@@ -89,7 +89,7 @@ class MotorDriver():
     if (direction == self.lastDir):
       #same as before
       pass
-      print("gowno")
+      print("penis")
       print(self.lastDir)
     else:
       #forward
