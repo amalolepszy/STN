@@ -89,8 +89,6 @@ class MotorDriver():
     if (direction == self.lastDirection):
       #same as before
       pass
-      print("penis")
-      print(self.lastDirection)
     else:
       #forward
       if(direction == "forward"):
