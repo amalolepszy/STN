@@ -17,7 +17,7 @@ class LineFollower(GamepadControl, MotorDriver):
 
 def main():
   lineFollower = LineFollower()
-  lineFollower._initMotorPins()
+  lineFollower.initMotorPins()
   while(1):
     lineFollower.useGamePad()
 
