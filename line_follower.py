@@ -1,9 +1,7 @@
 from gamepad_control import GamepadControl
 from motor_driver import MotorDriver
-#import RPi.GPIO as GPIO
 
-#from inputs import get_gamepad
-#from inputs import devices
+import argparse
 
 
 class LineFollower(GamepadControl, MotorDriver):
@@ -14,10 +12,14 @@ class LineFollower(GamepadControl, MotorDriver):
 
 
 def main():
+  parser = argparse.ArgumentParser()
+  parser.add_argument('use_gamepad')
+  args = parser.parse_args()
   lineFollower = LineFollower()
   lineFollower.initMotorPins()
-  while(1):
-    lineFollower.useGamePad()
+  if('use_gamepad' in args.use_gamepad)
+    while(1):
+      lineFollower.useGamePad()
 
 if __name__ == "__main__":
   main()
