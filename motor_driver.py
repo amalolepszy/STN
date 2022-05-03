@@ -6,9 +6,10 @@ from rpi_pins import motorPins as mPins
 class MotorDriver():
   speedRight = 0
   speedLeft = 0
+  lastDirection = "forward"
 
 
-  def _initMotorPins(self):
+  def initMotorPins(self):
     """Initializing Pins used for the motor.
     IN pins are logic GPIO.OUT values, used for steering the direction.
     EN pins are used for initializing the speed of the motors by modulating the PWM signal.
@@ -79,34 +80,41 @@ class MotorDriver():
     while(x <= speed):
       self.speedRight.ChangeDutyCycle(x)
       self.speedLeft.ChangeDutyCycle(x)
-      x += 2
-      time.sleep(0.01)
+      x += 5
+      time.sleep(0.001)
 
 
   def goDirection(self, direction):
-    self._initMotorPins()
-    #forward
-    if(direction == "forward"):
-      self._goForward()
-      self._rampSpeed()
-    #reverse
-    elif(direction == "reverse"):
-      self._goReverse()
-      self._rampSpeed()
-    #left
-    elif(direction == "left"):
-      self._goLeft()
-      self._rampSpeed(70)
-    #right
-    elif(direction == "right"):
-      self._goRight()
-      self._rampSpeed(70)
+    #buffer to not ramp up speed constantly
+    if (direction == self.lastDirection):
+      #same as before
+      pass
+    else:
+      #forward
+      if(direction == "forward"):
+        self._goForward()
+        self._rampSpeed()
+      #reverse
+      elif(direction == "reverse"):
+        self._goReverse()
+        self._rampSpeed()
+      #left
+      elif(direction == "left"):
+        self._goLeft()
+        self._rampSpeed(70)
+      #right
+      elif(direction == "right"):
+        self._goRight()
+        self._rampSpeed(70)
+      
+      self.lastDirection = direction
 
 def main():
   parser = argparse.ArgumentParser()
   parser.add_argument('direction')
   args = parser.parse_args()
   motorDriver = MotorDriver()
+  motorDriver.initMotorPins()
   motorDriver.goDirection(args.direction)
 
 if __name__ == "__main__":

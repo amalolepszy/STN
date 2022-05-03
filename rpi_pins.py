@@ -15,14 +15,14 @@ class motorPins:
         # GND - Forward           
   """
   #right - motor A
-  MOTOR_RIGHT_EN = 5      #ENA
+  MOTOR_RIGHT_EN = 18   #ENA
   MOTOR_RIGHT_IN1 = 4   #in1
   MOTOR_RIGHT_IN2 = 14  #in2
 
   #left - motor B
-  MOTOR_LEFT_EN = 16      #ENB
-  MOTOR_LEFT_IN1 = 17   #in3
-  MOTOR_LEFT_IN2 = 18   #in4
+  MOTOR_LEFT_EN = 13      #ENB
+  MOTOR_LEFT_IN1 = 16   #in3
+  MOTOR_LEFT_IN2 = 19   #in4
 
 class sensorPins:
   """Class initializing pins used for the IR sensors.
