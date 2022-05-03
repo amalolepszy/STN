@@ -11,9 +11,8 @@ class LineFollower(GamepadControl, MotorDriver):
   """
   def useGamePad(self):
     print("gowno")
-    dir = self.getGamepadDirection()
-    print(dir)
-    self.goDirection(dir)
+    print(self.getGamepadDirection())
+    self.goDirection(self.getGamepadDirection())
 
 
 def main():

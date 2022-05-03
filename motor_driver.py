@@ -8,7 +8,7 @@ class MotorDriver():
   speedLeft = 0
 
 
-  def _initMotorPins(self):
+  def initMotorPins(self):
     """Initializing Pins used for the motor.
     IN pins are logic GPIO.OUT values, used for steering the direction.
     EN pins are used for initializing the speed of the motors by modulating the PWM signal.
@@ -106,6 +106,7 @@ def main():
   parser.add_argument('direction')
   args = parser.parse_args()
   motorDriver = MotorDriver()
+  motorDriver.initMotorPins()
   motorDriver.goDirection(args.direction)
 
 if __name__ == "__main__":
