@@ -17,7 +17,7 @@ def main():
   args = parser.parse_args()
   lineFollower = LineFollower()
   lineFollower.initMotorPins()
-  if('use_gamepad' in args.use_gamepad)
+  if(args.use_gamepad == 'use_gamepad'):
     while(1):
       lineFollower.useGamePad()
 
