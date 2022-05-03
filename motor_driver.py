@@ -6,6 +6,7 @@ from rpi_pins import motorPins as mPins
 class MotorDriver():
   speedRight = 0
   speedLeft = 0
+  lastDir = ""
 
 
   def initMotorPins(self):
@@ -84,22 +85,27 @@ class MotorDriver():
 
 
   def goDirection(self, direction):
-    #forward
-    if(direction == "forward"):
-      self._goForward()
-      self._rampSpeed()
-    #reverse
-    elif(direction == "reverse"):
-      self._goReverse()
-      self._rampSpeed()
-    #left
-    elif(direction == "left"):
-      self._goLeft()
-      self._rampSpeed(70)
-    #right
-    elif(direction == "right"):
-      self._goRight()
-      self._rampSpeed(70)
+    #buffer to not ramp up speed constantly
+    if (self.lastDir == direction):
+      #same as before
+      pass
+    else:
+      #forward
+      if(direction == "forward"):
+        self._goForward()
+        self._rampSpeed()
+      #reverse
+      elif(direction == "reverse"):
+        self._goReverse()
+        self._rampSpeed()
+      #left
+      elif(direction == "left"):
+        self._goLeft()
+        self._rampSpeed(70)
+      #right
+      elif(direction == "right"):
+        self._goRight()
+        self._rampSpeed(70)
 
 def main():
   parser = argparse.ArgumentParser()
