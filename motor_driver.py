@@ -86,9 +86,11 @@ class MotorDriver():
 
   def goDirection(self, direction):
     #buffer to not ramp up speed constantly
-    if (self.lastDir == direction):
+    if (direction == self.lastDir):
       #same as before
       pass
+      print("gowno")
+      print(self.lastDir)
     else:
       #forward
       if(direction == "forward"):
