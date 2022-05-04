@@ -70,7 +70,7 @@ class MotorDriver():
     print("[DEBUG] Going left.")
 
 
-  def _rampSpeed(self, speed = 100):
+  def _rampSpeed(self, speed):
     """Method ramping up speed to avoid loss of control
 
     Args:
@@ -93,11 +93,11 @@ class MotorDriver():
       #forward
       if(direction == "forward"):
         self._goForward()
-        self._rampSpeed()
+        self._rampSpeed(100)
       #reverse
       elif(direction == "reverse"):
         self._goReverse()
-        self._rampSpeed()
+        self._rampSpeed(100)
       #left
       elif(direction == "left"):
         self._goLeft()
