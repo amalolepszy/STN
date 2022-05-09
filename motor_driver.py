@@ -101,11 +101,11 @@ class MotorDriver():
       #left
       elif(direction == "left"):
         self._goLeft()
-        self._rampSpeed(70)
+        self._rampSpeed(100)
       #right
       elif(direction == "right"):
         self._goRight()
-        self._rampSpeed(70)
+        self._rampSpeed(100)
       
       self.lastDirection = direction
 
