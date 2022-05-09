@@ -19,7 +19,7 @@ class GamepadControl():
       for event in events:
         print(event.ev_type, event.code, event.state)
       
-  def getGamepadDirection(self, sensitivity = 15000):
+  def getGamepadDirection(self, sensitivity = 10000):
     dir = ""
     events = self._getGamepadEvent()
     for event in events:
