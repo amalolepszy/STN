@@ -19,24 +19,29 @@ class GamepadControl():
       for event in events:
         print(event.ev_type, event.code, event.state)
       
-  def getGamepadDirection(self):
+  def getGamepadDirection(self, sensitivity = 15000):
     dir = ""
     events = self._getGamepadEvent()
     for event in events:
       #lewo-prawo
       if(event.ev_type == "Absolute" and event.code == "ABS_X"):
-        if(event.state > 15000): #prawo
+        if(event.state > sensitivity): #prawo
           dir = "right"
-        elif(event.state < -15000): #lewo
+        elif(event.state < -sensitivity): #lewo
           dir = "left"
+        elif(event.state > -sensitivity and event.state < sensitivity):
+          dir = "stand"
       #gora-dol
       if(event.ev_type == "Absolute" and event.code == "ABS_Y"):
-        if(event.state > 15000): #gora
+        if(event.state > sensitivity): #gora
           dir = "reverse"
-        elif(event.state < -15000): #dol
+        elif(event.state < -sensitivity): #dol
           dir = "forward"
+        elif(event.state > -sensitivity and event.state < sensitivity):
+          dir = "stand"
+      
     
-    if (dir in ["right", "left", "reverse", "forward"]):
+    if (dir in ["right", "left", "reverse", "forward", "stand"]):
       self.lastDir = dir
     else:
       dir = self.lastDir

@@ -69,6 +69,13 @@ class MotorDriver():
     GPIO.output(mPins.MOTOR_RIGHT_IN2, GPIO.LOW)
     print("[DEBUG] Going left.")
 
+  def _standStill(self):
+    GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.LOW)
+    GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.LOW)
+    GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.LOW)
+    GPIO.output(mPins.MOTOR_RIGHT_IN2, GPIO.LOW)
+    print("[DEBUG] Standing still.")
+
 
   def _rampSpeed(self, speed):
     """Method ramping up speed to avoid loss of control
@@ -80,8 +87,8 @@ class MotorDriver():
     while(x <= speed):
       self.speedRight.ChangeDutyCycle(x)
       self.speedLeft.ChangeDutyCycle(x)
-      x += 10
-      time.sleep(0.001)
+      x += 5
+      time.sleep(0.01)
 
 
   def goDirection(self, direction):
@@ -106,7 +113,11 @@ class MotorDriver():
       elif(direction == "right"):
         self._goRight()
         self._rampSpeed(70)
-      
+      #stand still
+      elif(direction == "stand"):
+        self._standStill()
+        self._rampSpeed(0)
+        
       self.lastDirection = direction
 
 def main():
