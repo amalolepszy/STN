@@ -1,5 +1,5 @@
-from gamepad_control import GamepadControl
-from motor_driver import MotorDriver
+from src.gamepad_control import GamepadControl
+from src.motor_driver import MotorDriver
 
 import argparse
 
