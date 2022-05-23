@@ -74,8 +74,8 @@ def main():
   # args = parser.parse_args()
 
   # #testing sensor
-  # RSensor = ReflectiveSensor()
-  # RSensor.initSensorPins()
+  RSensor = ReflectiveSensor()
+  RSensor.initSensorPins()
   # if not args.sensorPin:
   #   args = parser.parse_args('sensorPin')
   #   RSensor.getStatus(args.sensorPin)
