@@ -46,7 +46,7 @@ class ReflectiveSensor:
     GPIO.add_event_detect(sPins.LEFT_FAR, GPIO.RISING,
                           callback = self.leftFarCallback, bouncetime = 20)
     GPIO.add_event_detect(sPins.RIGHT_CLOSE, GPIO.RISING,
-                          callback = self.rightClose, bouncetime = 20)
+                          callback = self.rightCloseCallback, bouncetime = 20)
     GPIO.add_event_detect(sPins.RIGHT_FAR, GPIO.RISING,
                           callback = self.rightFarCallback, bouncetime = 20)
     GPIO.add_event_detect(sPins.CENTER, GPIO.RISING,
