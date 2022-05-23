@@ -40,11 +40,11 @@ class sensorPins:
                                │
   """
   #front left
-  FRONT_LEFT_CLOSE = 1
-  FRONT_LEFT_FAR = 2
-  #front right
-  FRONT_RIGHT_CLOSE = 3
-  FRONT_RIGHT_FAR = 4
-  #back
-  BACK_RIGHT = 5
-  BACK_LEFT = 6
+  LEFT_FAR = 27
+  LEFT_CLOSE = 22
+  #center
+  CENTER = 10
+  #right
+  RIGHT_CLOSE = 9
+  RIGHT_FAR = 11
+
