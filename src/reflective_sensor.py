@@ -77,7 +77,7 @@ def main():
   #testing sensor
   RSensor = ReflectiveSensor()
   RSensor.initSensorPins()
-  if args.sensorPin:
+  if not args.sensorPin:
     RSensor.getStatus(args.sensorPin)
   while(1):
     pass
