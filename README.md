@@ -22,9 +22,9 @@ For now, clone it from git and launch from command line.
   git clone https://github.com/jestem-andrew/STN.git
 ```
 
-## Run the scrypt
+## Run the script
 
-In order to run the line follower scrypt, use
+In order to run the line follower script, use
 ```bash
   python line_follower.py <flag>
 ```
