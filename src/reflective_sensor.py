@@ -42,15 +42,15 @@ class ReflectiveSensor:
 
     #setting up interrupts
     GPIO.add_event_detect(sPins.LEFT_CLOSE, GPIO.RISING,
-                          callback = self.frontLeftCloseCallback, bouncetime = 20)
+                          callback = self.leftCloseCallback, bouncetime = 20)
     GPIO.add_event_detect(sPins.LEFT_FAR, GPIO.RISING,
-                          callback = self.frontLeftFarCallback, bouncetime = 20)
+                          callback = self.leftFarCallback, bouncetime = 20)
     GPIO.add_event_detect(sPins.RIGHT_CLOSE, GPIO.RISING,
-                          callback = self.frontRightClose, bouncetime = 20)
+                          callback = self.rightClose, bouncetime = 20)
     GPIO.add_event_detect(sPins.RIGHT_FAR, GPIO.RISING,
-                          callback = self.frontRightFarCallback, bouncetime = 20)
+                          callback = self.rightFarCallback, bouncetime = 20)
     GPIO.add_event_detect(sPins.CENTER, GPIO.RISING,
-                          callback = self.backRightCallback, bouncetime = 20)
+                          callback = self.centerCallback, bouncetime = 20)
 
 
   def getStatus(self, sensorPin):
