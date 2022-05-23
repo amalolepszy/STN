@@ -62,7 +62,6 @@ class ReflectiveSensor:
     Returns:
         int : 1 when light gets reflected, 0 when nothing to reflect
     """
-    print('dupa')
     sPin = int(sensorPin)
     GPIO.setup(sPin, GPIO.IN)
     print(GPIO.input(sPin))
@@ -78,6 +77,7 @@ def main():
   RSensor = ReflectiveSensor()
   RSensor.initSensorPins()
   if not args.sensorPin:
+    args = parser.parse_args('sensorPin')
     RSensor.getStatus(args.sensorPin)
   while(1):
     pass
