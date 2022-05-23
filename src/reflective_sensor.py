@@ -68,8 +68,8 @@ class ReflectiveSensor:
 def main():
   #argument parser for debugging
   parser = argparse.ArgumentParser()
-  parser.add_argument('sensorPin')
-  args = parser.parse_args()
+  parser.add_argument('sensorPin', action='store_true')
+  args = parser.parse_args(['sensorPin'])
 
   #testing sensor
   RSensor = ReflectiveSensor()
