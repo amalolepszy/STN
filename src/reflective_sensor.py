@@ -69,7 +69,7 @@ def main():
   #argument parser for debugging
   parser = argparse.ArgumentParser()
   parser.add_argument('sensorPin', action='store_true')
-  args = parser.parse_args(['sensorPin'])
+  args = parser.parse_args('sensorPin')
 
   #testing sensor
   RSensor = ReflectiveSensor()
