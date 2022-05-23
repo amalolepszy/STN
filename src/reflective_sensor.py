@@ -1,4 +1,3 @@
-import argparse
 import RPi.GPIO as GPIO
 from rpi_pins import sensorPins as sPins
 
@@ -68,18 +67,18 @@ class ReflectiveSensor:
     return GPIO.input(int(sensorPin))
 
 def main():
-  #argument parser for debugging
-  parser = argparse.ArgumentParser()
-  parser.add_argument('sensorPin')
-  parser.add_argument(' ', action='store_true')
-  args = parser.parse_args()
+  # #argument parser for debugging
+  # parser = argparse.ArgumentParser()
+  # parser.add_argument('sensorPin')
+  # parser.add_argument(' ', action='store_true')
+  # args = parser.parse_args()
 
-  #testing sensor
-  RSensor = ReflectiveSensor()
-  RSensor.initSensorPins()
-  if not args.sensorPin:
-    args = parser.parse_args('sensorPin')
-    RSensor.getStatus(args.sensorPin)
+  # #testing sensor
+  # RSensor = ReflectiveSensor()
+  # RSensor.initSensorPins()
+  # if not args.sensorPin:
+  #   args = parser.parse_args('sensorPin')
+  #   RSensor.getStatus(args.sensorPin)
   while(1):
     pass
 
