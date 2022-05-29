@@ -9,9 +9,9 @@ class GamepadControl(xbox.Joystick):
   def getLeftStickDirection(self):
     left_stick_y = self.leftY()
     if(left_stick_y <= -0.5):
-      return "forward"
-    elif (left_stick_y >= 0.5):
       return "reverse"
+    elif (left_stick_y >= 0.5):
+      return "forward"
     elif (left_stick_y < 0.5 and left_stick_y > -0.5):
       return "stay"
     
