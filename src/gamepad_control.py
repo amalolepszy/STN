@@ -1,18 +1,13 @@
-import xbox360_controller
-import pygame
+import xbox
 
 
-class GamepadControl(xbox360_controller.Controller):
-  """[020] Rework the class to work with pygame.
+class GamepadControl(xbox.Joystick):
+  """[021] Rework the class to work with xbox.
   [002] Class containing methods to gather inputs from the x360 controller."""
 
-  pygame.init()
-  pygame.display.init()
 
   def getLeftStickDirection(self):
-    left_stick_x, left_stick_y = self.get_left_stick()
-    # print("left_stick_x = ", left_stick_x)
-    # print("left_stick_y = ", left_stick_y)
+    left_stick_y = self.leftY()
     if(left_stick_y <= -0.5):
       return "forward"
     elif (left_stick_y >= 0.5):
@@ -22,9 +17,7 @@ class GamepadControl(xbox360_controller.Controller):
     
 
   def getRightStickDirection(self):
-    right_stick_x, right_stick_y = self.get_right_stick()
-    # print("right_stick_x = ", right_stick_x)
-    # print("right_stick_y = ", right_stick_y)
+    right_stick_x = self.rightX()
     if(right_stick_x < -0.5):
       return "left"
     elif (right_stick_x > 0.5):
@@ -62,27 +55,18 @@ class GamepadControl(xbox360_controller.Controller):
 
 
   def getPressedButton(self):
-    pressed = self.get_buttons()
-    #buttons
-    a_btn = pressed[xbox360_controller.A]
-    b_btn = pressed[xbox360_controller.B]
-    x_btn = pressed[xbox360_controller.X]
-    y_btn = pressed[xbox360_controller.Y]
-    #bumpers
-    lt_bump = pressed[xbox360_controller.LEFT_BUMP]
-    rt_bump = pressed[xbox360_controller.RIGHT_BUMP]
 
-    if(a_btn):
+    if(self.A):
       return "A"
-    elif(b_btn):
+    elif(self.B):
       return "B"
-    elif(x_btn):
+    elif(self.X):
       return "X"
-    elif(y_btn):
+    elif(self.Y):
       return "Y"
-    elif(lt_bump):
+    elif(self.leftTrigger):
       return "LT"
-    elif(rt_bump):
+    elif(self.rightTrigger):
       return "RT"
     else:
       return "nobutton"
@@ -91,7 +75,6 @@ class GamepadControl(xbox360_controller.Controller):
 def main():
   Control = GamepadControl()
   while(1):
-    for event in pygame.event.get():
       print(Control.getGamepadDirection())
 if __name__ == "__main__":
   main()
