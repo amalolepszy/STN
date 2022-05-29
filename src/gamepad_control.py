@@ -7,6 +7,7 @@ class GamepadControl(xbox360_controller.Controller):
   [002] Class containing methods to gather inputs from the x360 controller."""
 
   pygame.init()
+  pygame.display.init()
 
   def getLeftStickDirection(self):
     left_stick_x, left_stick_y = self.get_left_stick()
@@ -57,7 +58,7 @@ class GamepadControl(xbox360_controller.Controller):
     elif(self.getLeftStickDirection() == "reverse" and self.getRightStickDirection() == "left"):
       dir =  "reverse-left"
     
-    return
+    return dir
 
 
   def getPressedButton(self):
