@@ -1,5 +1,5 @@
 import argparse
-from src.gamepad_control import GamepadControl
+from src.gamepad_control.gamepad_control import GamepadControl
 from src.motor_driver import MotorDriver
 
 class LineFollower(GamepadControl, MotorDriver):
