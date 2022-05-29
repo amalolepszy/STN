@@ -5,7 +5,6 @@ Source code of a group project developed as part of the Projekt Zespołowy P lea
 
 ## Required modules
  - `pygame`
- - `future`
  - `RPi.GPIO`
 
 
