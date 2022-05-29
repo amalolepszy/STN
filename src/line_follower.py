@@ -1,6 +1,6 @@
 import argparse
-from src.gamepad_control import GamepadControl
-from src.motor_driver import MotorDriver
+from gamepad_control import GamepadControl
+from motor_driver import MotorDriver
 
 class LineFollower(GamepadControl, MotorDriver):
   """Main class used for controlling the line follower.
