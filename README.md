@@ -21,6 +21,12 @@ For now, clone it from git and launch from command line.
   git clone https://github.com/jestem-andrew/STN.git
 ```
 
+Also, make sure that the you have xbox drivers downloaded:
+
+```bash
+  sudo apt-get install xboxdrv
+```
+
 ## Run the script
 
 In order to run the line follower script, use
