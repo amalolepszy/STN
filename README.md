@@ -4,7 +4,7 @@
 Source code of a group project developed as part of the Projekt Zespołowy P lead by Dr. Jarosław Glapiński in the semester 2021/2022.
 
 ## Required modules
- - `inputs`
+ - `pygame`
  - `future`
  - `RPi.GPIO`
 
