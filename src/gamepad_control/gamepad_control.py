@@ -58,7 +58,7 @@ class GamepadControl(xbox360_controller.Controller):
     elif(self.getLeftStickDirection() == "reverse" and self.getRightStickDirection() == "left"):
       dir =  "reverse-left"
     
-    return
+    return dir
 
 
   def getPressedButton(self):
