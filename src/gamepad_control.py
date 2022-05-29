@@ -33,25 +33,23 @@ class GamepadControl(xbox.Joystick):
         string: The direction that the robot should go.
     """
     if(self.getLeftStickDirection() == "forward" and self.getRightStickDirection() == "dontturn"):
-      dir = "forward"
+      return "forward"
     elif(self.getLeftStickDirection() == "reverse" and self.getRightStickDirection() == "dontturn"):
-      dir =  "reverse"
+      return "reverse"
     elif(self.getLeftStickDirection() == "stay" and self.getRightStickDirection() == "dontturn"):
-      dir =  "stay"
+      return "stay"
     elif(self.getLeftStickDirection() == "stay" and self.getRightStickDirection() == "left"):
-      dir =  "left"
+      return "left"
     elif(self.getLeftStickDirection() == "stay" and self.getRightStickDirection() == "right"):
-      dir =  "right"
+      return "right"
     elif(self.getLeftStickDirection() == "forward" and self.getRightStickDirection() == "right"):
-      dir =  "forward-right"
+      return "forward-right"
     elif(self.getLeftStickDirection() == "forward" and self.getRightStickDirection() == "left"):
-      dir =  "forward-left"
+      return "forward-left"
     elif(self.getLeftStickDirection() == "reverse" and self.getRightStickDirection() == "right"):
-      dir =  "reverse-right"
+      return "reverse-right"
     elif(self.getLeftStickDirection() == "reverse" and self.getRightStickDirection() == "left"):
-      dir =  "reverse-left"
-    
-    return dir
+      return "reverse-left"
 
 
   def getPressedButton(self):
