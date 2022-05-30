@@ -45,7 +45,7 @@ class MotorDriver():
     GPIO.output(mPins.MOTOR_RIGHT_IN2, GPIO.LOW)
     print("[DEBUG] Going forward.")
 
-  def _goForwardRight(self):
+  def _goForwardLeft(self):
     GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.HIGH)
     GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.LOW)
     self.speedRight.ChangeDutyCycle(80)
@@ -68,6 +68,21 @@ class MotorDriver():
     GPIO.output(mPins.MOTOR_RIGHT_IN2, GPIO.HIGH)
     print("[DEBUG] Going reverse.")
 
+  def _goReverseLeft(self):
+    GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.LOW)
+    GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.HIGH)
+    self.speedRight.ChangeDutyCycle(80)
+    GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.LOW)
+    GPIO.output(mPins.MOTOR_RIGHT_IN2, GPIO.HIGH)
+    print("[DEBUG] Going reverse - right.")
+
+  def _goReverseRight(self):
+    self.speedLeft.ChangeDutyCycle(80)
+    GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.LOW)
+    GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.HIGH)
+    GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.LOW)
+    GPIO.output(mPins.MOTOR_RIGHT_IN2, GPIO.HIGH)
+    print("[DEBUG] Going reverse - left.")
 
   def _goRight(self):
     GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.HIGH)
@@ -76,13 +91,19 @@ class MotorDriver():
     GPIO.output(mPins.MOTOR_RIGHT_IN2, GPIO.LOW)
     print("[DEBUG] Going right.")
 
-
   def _goLeft(self):
     GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.LOW)
     GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.LOW)
     GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.HIGH)
     GPIO.output(mPins.MOTOR_RIGHT_IN2, GPIO.LOW)
     print("[DEBUG] Going left.")
+
+  def _standStill(self):
+    GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.LOW)
+    GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.LOW)
+    GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.LOW)
+    GPIO.output(mPins.MOTOR_RIGHT_IN2, GPIO.LOW)
+    print("[DEBUG] Standing still.")
 
 
   def _rampSpeed(self, speed):
@@ -121,7 +142,22 @@ class MotorDriver():
       elif(direction == "right"):
         self._goRight()
         self._rampSpeed(100)
-      
+      #forward-right
+      elif(direction == "forward-right"):
+        self._goForwardRight()
+      #forward-left
+      elif(direction == "forward-left"):
+        self._goForwardLeft()
+      #reverse-right
+      elif(direction == "reverse-right"):
+        self._goReverseRight()
+      #reverse-left
+      elif(direction == "reverse-left"):
+        self._goReverseLeft()
+      #standstill
+      elif(direction == "stay"):
+        self._standStill()
+        self._rampSpeed(0)
       self.lastDirection = direction
 
 def main():
