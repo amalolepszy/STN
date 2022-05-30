@@ -3,7 +3,7 @@ from gamepad_control import GamepadControl
 from motor_driver import MotorDriver
 from reflective_sensor import ReflectiveSensor
 
-class LineFollower(GamepadControl, MotorDriver, ReflectiveSensor):
+class LineFollower(GamepadControl, ReflectiveSensor, MotorDriver):
   """Main class used for controlling the line follower.
   """
   def useGamePad(self):
