@@ -13,6 +13,7 @@ class Sounds:
         path (string): Path to the mp3 file that should be played
     """
     player = subprocess.Popen(["mplayer", path], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    print("[DEBUG] Playing sound.")
 
   def playUwazaj(self):
     self.playSound("~/project_venv/STN/src/uwazaj.mp3")
