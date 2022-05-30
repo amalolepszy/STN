@@ -12,6 +12,7 @@ class Sounds:
     Args:
         path (string): Path to the mp3 file that should be played
     """
+    pygame.init()
     pygame.mixer.init()
     sounda = pygame.mixer.Sound(path)
     sounda.play()
