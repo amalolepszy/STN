@@ -1,29 +1,41 @@
 import RPi.GPIO as GPIO
 from rpi_pins import sensorPins as sPins
+from motor_driver import MotorDriver as mDriver
 
-class ReflectiveSensor:
+class ReflectiveSensor(mDriver):
   """Class used for controlling and setting up the reflective sensors.
      Callback methods are used for interrupts.
   """
-  def leftCloseCallback(self, channel):
-    print("Left Close Sensor triggered")
-
-
+  
   def leftFarCallback(self, channel):
     print("Left Far Sensor triggered")
+    self._goForward()
+    self.speedLeft.ChangeDutyCycle(20)
+    self.speedRight.ChangeDutyCycle(100)
 
+  def leftCloseCallback(self, channel):
+    print("Left Close Sensor triggered")
+    self._goForward()
+    self.speedLeft.ChangeDutyCycle(60)
+    self.speedRight.ChangeDutyCycle(100)
+    
 
   def centerCallback(self, channel):
     print("Center Sensor triggered")
+    self._goForward()
+    self.speedLeft.ChangeDutyCycle(100)
+    self.speedRight.ChangeDutyCycle(100)
+
+  def rightCloseCallback(self, channel):
+    print("Right Close Sensor triggered")
+    self.speedLeft.ChangeDutyCycle(100)
+    self.speedRight.ChangeDutyCycle(60)
 
 
   def rightFarCallback(self, channel):
     print("Right Far Sensor triggered")
-
-
-  def rightCloseCallback(self, channel):
-    print("Right Close Sensor triggered")
-
+    self.speedLeft.ChangeDutyCycle(100)
+    self.speedRight.ChangeDutyCycle(20)
 
   def initSensorPins(self):
     """Initializing Pins used for the sensors.
