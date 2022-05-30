@@ -14,7 +14,7 @@ class Sounds:
     """
     pygame.mixer.init()
     pygame.mixer.music.load(path)
-    pygame.mixer.muxic.play()
+    pygame.mixer.music.play()
     while pygame.mixer.music.get_busy():
       continue
 
@@ -27,4 +27,3 @@ def main():
 
 if __name__ == "__main__":
   main()
-
