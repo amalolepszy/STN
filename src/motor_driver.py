@@ -6,7 +6,7 @@ from rpi_pins import motorPins as mPins
 class MotorDriver():
   speedRight = 0
   speedLeft = 0
-  lastDirection = "stay"
+  lastDirection = "forward"
 
 
   def initMotorPins(self):
