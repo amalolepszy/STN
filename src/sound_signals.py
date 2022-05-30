@@ -1,5 +1,4 @@
 import pygame
-import os
 
 class Sounds:
   """Class containing methods that play sounds through speakers.
@@ -7,7 +6,6 @@ class Sounds:
   Use by calling each method, or just playSound with path argument.
 
   """
-  os.environ['SDL_AUDIODRIVER'] = 'dsp'
   def playSound(self, path):
     """Play sound from path
 
@@ -15,8 +13,8 @@ class Sounds:
         path (string): Path to the mp3 file that should be played
     """
     pygame.mixer.init()
-    pygame.mixer.music.load(path)
-    pygame.mixer.music.play()
+    sounda = pygame.mixer.Sound(path)
+    sounda.play()
     while pygame.mixer.music.get_busy():
       continue
 
