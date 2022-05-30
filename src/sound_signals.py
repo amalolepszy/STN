@@ -1,4 +1,5 @@
 import pygame
+import os
 
 class Sounds:
   """Class containing methods that play sounds through speakers.
@@ -6,6 +7,7 @@ class Sounds:
   Use by calling each method, or just playSound with path argument.
 
   """
+  os.environ['SDL_AUDIODRIVER'] = 'dsp'
   def playSound(self, path):
     """Play sound from path
 
