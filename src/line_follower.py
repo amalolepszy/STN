@@ -10,8 +10,8 @@ class LineFollower(GamepadControl, ReflectiveSensor, MotorDriver):
     self.goDirection(self.getGamepadDirection())
 
 def main():
-  parser = argparse.ArgumentParser()
-  parser.add_argument('control')
+  parser = argparse.ArgumentParser(description='Initialize the Line Follower')
+  parser.add_argument('control', help="reflective for the reflective sensor, use_gamepad for gamepad")
   args = parser.parse_args()
   lineFollower = LineFollower()
   lineFollower.initMotorPins()
