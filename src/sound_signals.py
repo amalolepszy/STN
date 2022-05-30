@@ -15,7 +15,7 @@ class Sounds:
     player = subprocess.Popen(["mplayer", path], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
   def playUwazaj(self):
-    self.playSound("uwazaj.mp3")
+    self.playSound("~/project_venv/STN/src/uwazaj.mp3")
 
 def main():
   Sound = Sounds()
