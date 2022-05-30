@@ -28,11 +28,13 @@ class ReflectiveSensor(mDriver):
 
   def rightCloseCallback(self, channel):
     print("Right Close Sensor triggered")
+    self._goForward()
     self.speedLeft.ChangeDutyCycle(100)
     self.speedRight.ChangeDutyCycle(60)
 
 
   def rightFarCallback(self, channel):
+    self._goForward()
     print("Right Far Sensor triggered")
     self.speedLeft.ChangeDutyCycle(100)
     self.speedRight.ChangeDutyCycle(20)
