@@ -91,11 +91,11 @@ class ReflectiveSensor(mDriver):
       if(GPIO.input(sPins.LEFT_FAR) == True):
         self._goLeft()
       elif (GPIO.input(sPins.LEFT_CLOSE) == True):
-        self._goForward()
+        self._goLeft()
       elif (GPIO.input(sPins.CENTER) == True):
         self._goForward()
       elif (GPIO.input(sPins.RIGHT_CLOSE) == True):
-        self._goForward()
+        self._goRight()
       elif (GPIO.input(sPins.RIGHT_FAR) == True):
         self._goRight()
       elif (not(GPIO.input(sPins.RIGHT_FAR) and GPIO.input(sPins.LEFT_CLOSE) and GPIO.input(sPins.CENTER) and GPIO.input(sPins.LEFT_CLOSE) and GPIO.input(sPins.LEFT_FAR))):
