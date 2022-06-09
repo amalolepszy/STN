@@ -8,6 +8,8 @@ class LineFollower(GamepadControl, ReflectiveSensor, MotorDriver):
   """
   def useGamePad(self):
     self.goDirection(self.getGamepadDirection())
+  def useReflective(self):
+    self.ride_reflective()
 
 def main():
   #parser = argparse.ArgumentParser(description='Initialize the Line Follower')
@@ -22,7 +24,7 @@ def main():
   #if args.control == 'reflective':
   lineFollower.initSensorPins()
   while True:
-    lineFollower.ride_reflective()
+    lineFollower.useReflective()
 
 
 if __name__ == "__main__":
