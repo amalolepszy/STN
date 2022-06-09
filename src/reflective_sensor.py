@@ -95,7 +95,8 @@ class ReflectiveSensor(mDriver):
         self.rightCloseCallback()
       elif (GPIO.input(sPins.RIGHT_FAR) == False):
         self.rightFarCallback()
-      elif (GPIO.input(sPins.RIGHT_FAR) and GPIO.input(sPins.LEFT_CLOSE) and GPIO.input(sPins.CENTER) and GPIO.input(sPins.LEFT_CLOSE) and GPIO.input(sPins.LEFT_FAR))
+      elif (GPIO.input(sPins.RIGHT_FAR) and GPIO.input(sPins.LEFT_CLOSE) and GPIO.input(sPins.CENTER) and GPIO.input(sPins.LEFT_CLOSE) and GPIO.input(sPins.LEFT_FAR)):
+        self._standStill()
 
 def main():
   # #argument parser for debugging
