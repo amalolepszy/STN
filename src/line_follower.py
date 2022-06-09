@@ -22,7 +22,7 @@ def main():
   if args.control == 'reflective':
     lineFollower.initSensorPins()
     while True:
-      continue
+      lineFollower.ride_reflective()
 
 
 if __name__ == "__main__":
