@@ -86,15 +86,15 @@ class ReflectiveSensor(mDriver):
   def ride_reflective(self):
     while(1):
       if(GPIO.input(sPins.LEFT_FAR) == False):
-        self.leftFarCallback()
+        self.rightFarCallback()
       elif (GPIO.input(sPins.LEFT_CLOSE) == False):
-        self.leftFarCallback()
+        self.rightCloseCallback()
       elif (GPIO.input(sPins.CENTER) == False):
         self.centerCallback()
       elif (GPIO.input(sPins.RIGHT_CLOSE) == False):
-        self.rightCloseCallback()
+        self.leftCloseCallback()
       elif (GPIO.input(sPins.RIGHT_FAR) == False):
-        self.rightFarCallback()
+        self.leftFarCallback()
       elif (GPIO.input(sPins.RIGHT_FAR) and GPIO.input(sPins.LEFT_CLOSE) and GPIO.input(sPins.CENTER) and GPIO.input(sPins.LEFT_CLOSE) and GPIO.input(sPins.LEFT_FAR)):
         self._standStill()
 
