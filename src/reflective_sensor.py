@@ -1,4 +1,3 @@
-from tkinter import CENTER
 import RPi.GPIO as GPIO
 from rpi_pins import sensorPins as sPins
 from motor_driver import MotorDriver as mDriver
