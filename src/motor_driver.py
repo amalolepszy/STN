@@ -7,7 +7,7 @@ class MotorDriver():
   speedRight = 0
   speedLeft = 0
   lastDirection = "forward"
-  fullSpeed = 30
+  fullSpeed = 40
   halfSpeed = 30
 
 
