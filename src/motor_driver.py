@@ -39,8 +39,8 @@ class MotorDriver():
 
 
   def _goForward(self):
-    self.speedRight.ChangeDutyCycle(100)
-    self.speedLeft.ChangeDutyCycle(100)
+    self.speedRight.ChangeDutyCycle(80)
+    self.speedLeft.ChangeDutyCycle(80)
     GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.HIGH)
     GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.LOW)
     GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.HIGH)
@@ -48,8 +48,8 @@ class MotorDriver():
     print("[DEBUG] Going forward.")
 
   def _goForwardLeft(self):
-    self.speedRight.ChangeDutyCycle(80)
-    self.speedLeft.ChangeDutyCycle(100)
+    self.speedRight.ChangeDutyCycle(60)
+    self.speedLeft.ChangeDutyCycle(80)
     GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.HIGH)
     GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.LOW)
     GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.HIGH)
@@ -57,8 +57,8 @@ class MotorDriver():
     print("[DEBUG] Going forward - left.")
 
   def _goForwardRight(self):
-    self.speedLeft.ChangeDutyCycle(80)
-    self.speedRight.ChangeDutyCycle(100)
+    self.speedLeft.ChangeDutyCycle(60)
+    self.speedRight.ChangeDutyCycle(80)
     GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.HIGH)
     GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.LOW)
     GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.HIGH)
@@ -66,8 +66,8 @@ class MotorDriver():
     print("[DEBUG] Going forward - right.")
 
   def _goReverse(self):
-    self.speedLeft.ChangeDutyCycle(100)
-    self.speedRight.ChangeDutyCycle(100)
+    self.speedLeft.ChangeDutyCycle(80)
+    self.speedRight.ChangeDutyCycle(80)
     GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.LOW)
     GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.HIGH)
     GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.LOW)
@@ -75,8 +75,8 @@ class MotorDriver():
     print("[DEBUG] Going reverse.")
 
   def _goReverseLeft(self):
-    self.speedLeft.ChangeDutyCycle(100)
-    self.speedRight.ChangeDutyCycle(80)
+    self.speedLeft.ChangeDutyCycle(80)
+    self.speedRight.ChangeDutyCycle(60)
     GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.LOW)
     GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.HIGH)
     GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.LOW)
@@ -84,8 +84,8 @@ class MotorDriver():
     print("[DEBUG] Going reverse - left.")
 
   def _goReverseRight(self):
-    self.speedLeft.ChangeDutyCycle(80)
-    self.speedRight.ChangeDutyCycle(100)
+    self.speedLeft.ChangeDutyCycle(60)
+    self.speedRight.ChangeDutyCycle(80)
     GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.LOW)
     GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.HIGH)
     GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.LOW)
@@ -93,8 +93,8 @@ class MotorDriver():
     print("[DEBUG] Going reverse - right.")
 
   def _goRight(self):
-    self.speedLeft.ChangeDutyCycle(100)
-    self.speedRight.ChangeDutyCycle(100)
+    self.speedLeft.ChangeDutyCycle(80)
+    self.speedRight.ChangeDutyCycle(80)
     GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.HIGH)
     GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.LOW)
     GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.LOW)
@@ -102,8 +102,8 @@ class MotorDriver():
     print("[DEBUG] Going right.")
 
   def _goLeft(self):
-    self.speedLeft.ChangeDutyCycle(100)
-    self.speedRight.ChangeDutyCycle(100)
+    self.speedLeft.ChangeDutyCycle(80)
+    self.speedRight.ChangeDutyCycle(80)
     GPIO.output(mPins.MOTOR_LEFT_IN1, GPIO.LOW)
     GPIO.output(mPins.MOTOR_LEFT_IN2, GPIO.LOW)
     GPIO.output(mPins.MOTOR_RIGHT_IN1, GPIO.HIGH)
