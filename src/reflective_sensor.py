@@ -6,7 +6,7 @@ class ReflectiveSensor(mDriver):
   """Class used for controlling and setting up the reflective sensors.
      Callback methods are used for interrupts.
   """
-  fullSpeed = 60
+  fullSpeed = 20
   halfSpeed = 30
   quarterSpeed = 15
 
