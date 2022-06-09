@@ -6,38 +6,41 @@ class ReflectiveSensor(mDriver):
   """Class used for controlling and setting up the reflective sensors.
      Callback methods are used for interrupts.
   """
-  
+  fullSpeed = 60
+  halfSpeed = 30
+  quarterSpeed = 15
+
   def leftFarCallback(self):
     print("Left Far Sensor triggered")
     self._goForward()
-    self.speedLeft.ChangeDutyCycle(20)
-    self.speedRight.ChangeDutyCycle(100)
+    self.speedLeft.ChangeDutyCycle(self.quarterSpeed)
+    self.speedRight.ChangeDutyCycle(self.fullSpeed)
 
   def leftCloseCallback(self):
     print("Left Close Sensor triggered")
     self._goForward()
-    self.speedLeft.ChangeDutyCycle(60)
-    self.speedRight.ChangeDutyCycle(100)
+    self.speedLeft.ChangeDutyCycle(self.halfSpeed)
+    self.speedRight.ChangeDutyCycle(self.fullSpeed)
     
 
   def centerCallback(self):
     print("Center Sensor triggered")
     self._goForward()
-    self.speedLeft.ChangeDutyCycle(100)
-    self.speedRight.ChangeDutyCycle(100)
+    self.speedLeft.ChangeDutyCycle(self.fullSpeed)
+    self.speedRight.ChangeDutyCycle(self.fullSpeed)
 
   def rightCloseCallback(self):
     print("Right Close Sensor triggered")
     self._goForward()
-    self.speedLeft.ChangeDutyCycle(100)
-    self.speedRight.ChangeDutyCycle(60)
+    self.speedLeft.ChangeDutyCycle(self.fullSpeed)
+    self.speedRight.ChangeDutyCycle(self.halfSpeed)
 
 
   def rightFarCallback(self):
     self._goForward()
     print("Right Far Sensor triggered")
-    self.speedLeft.ChangeDutyCycle(100)
-    self.speedRight.ChangeDutyCycle(20)
+    self.speedLeft.ChangeDutyCycle(self.fullSpeed)
+    self.speedRight.ChangeDutyCycle(self.quarterSpeed)
 
   def initSensorPins(self):
     """Initializing Pins used for the sensors.
