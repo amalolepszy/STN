@@ -1,4 +1,4 @@
-import pygame
+import subprocess
 
 class Sounds:
   """Class containing methods that play sounds through speakers.
@@ -12,14 +12,11 @@ class Sounds:
     Args:
         path (string): Path to the mp3 file that should be played
     """
-    pygame.mixer.init()
-    pygame.mixer.music.load(path)
-    pygame.mixer.music.play()
-    while pygame.mixer.music.get_busy():
-      continue
+    player = subprocess.Popen(["mplayer", path], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    print("[DEBUG] Playing sound.")
 
   def playUwazaj(self):
-    self.playSound("uwazaj.mp3")
+    self.playSound("~/project_venv/STN/src/uwazaj.mp3")
 
 def main():
   Sound = Sounds()
