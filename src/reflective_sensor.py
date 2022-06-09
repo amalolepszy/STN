@@ -90,15 +90,15 @@ class ReflectiveSensor(mDriver):
       print("LEFT_FAR " + str(GPIO.input(sPins.LEFT_FAR)) +"\nLEFT_FAR " + str(GPIO.input(sPins.LEFT_CLOSE)) + "\nCENTER " + str(GPIO.input(sPins.CENTER)) + "\nRIGHT_CLOSE " + str(GPIO.input(sPins.RIGHT_CLOSE)) + "\nRIGHT_FAR " + str(GPIO.input(sPins.RIGHT_FAR)))
       if (((GPIO.input(sPins.RIGHT_FAR) and GPIO.input(sPins.LEFT_CLOSE) and GPIO.input(sPins.CENTER) and GPIO.input(sPins.LEFT_CLOSE) and GPIO.input(sPins.LEFT_FAR)))):
         self._standStill()
-      if(GPIO.input(sPins.LEFT_FAR) == True):
+      elif(GPIO.input(sPins.LEFT_FAR) == True):
         self._goLeft()
-      if (GPIO.input(sPins.LEFT_CLOSE) == True):
+      elif (GPIO.input(sPins.LEFT_CLOSE) == True):
         self._goLeft()
-      if (GPIO.input(sPins.CENTER) == True):
+      elif (GPIO.input(sPins.CENTER) == True):
         self._goForward()
-      if (GPIO.input(sPins.RIGHT_CLOSE) == True):
+      elif (GPIO.input(sPins.RIGHT_CLOSE) == True):
         self._goRight()
-      if (GPIO.input(sPins.RIGHT_FAR) == True):
+      elif (GPIO.input(sPins.RIGHT_FAR) == True):
         self._goRight()
 
       os.system('clear')
