@@ -2,6 +2,8 @@ import RPi.GPIO as GPIO
 from rpi_pins import sensorPins as sPins
 from motor_driver import MotorDriver as mDriver
 
+import os
+
 class ReflectiveSensor(mDriver):
   """Class used for controlling and setting up the reflective sensors.
      Callback methods are used for interrupts.
@@ -98,6 +100,8 @@ class ReflectiveSensor(mDriver):
         self._goLeft()
       elif ((GPIO.input(sPins.RIGHT_FAR) and GPIO.input(sPins.LEFT_CLOSE) and GPIO.input(sPins.CENTER) and GPIO.input(sPins.LEFT_CLOSE) and GPIO.input(sPins.LEFT_FAR))):
         self._standStill()
+      os.system('clear')
+      
 
 def main():
   # #argument parser for debugging
