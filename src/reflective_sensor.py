@@ -6,7 +6,7 @@ class ReflectiveSensor(mDriver):
   """Class used for controlling and setting up the reflective sensors.
      Callback methods are used for interrupts.
   """
-  fullSpeed = 35
+  fullSpeed = 40
   halfSpeed = 30
   quarterSpeed = 15
 
@@ -95,7 +95,7 @@ class ReflectiveSensor(mDriver):
         self._goForward()
       elif (GPIO.input(sPins.RIGHT_FAR) == True):
         self._goRight()
-      elif (not(GPIO.input(sPins.RIGHT_FAR) and GPIO.input(sPins.LEFT_CLOSE) and GPIO.input(sPins.CENTER) and GPIO.input(sPins.LEFT_CLOSE) and GPIO.input(sPins.LEFT_FAR))):
+      elif ((GPIO.input(sPins.RIGHT_FAR) and GPIO.input(sPins.LEFT_CLOSE) and GPIO.input(sPins.CENTER) and GPIO.input(sPins.LEFT_CLOSE) and GPIO.input(sPins.LEFT_FAR))):
         self._standStill()
 
 def main():
