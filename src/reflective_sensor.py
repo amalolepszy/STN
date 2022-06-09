@@ -13,13 +13,13 @@ class ReflectiveSensor(mDriver):
   def leftFarCallback(self):
     print("Left Far Sensor triggered")
     self._goForward()
-    self.speedLeft.ChangeDutyCycle(self.quarterSpeed)
+    self.speedLeft.ChangeDutyCycle(0)
     self.speedRight.ChangeDutyCycle(self.fullSpeed)
 
   def leftCloseCallback(self):
     print("Left Close Sensor triggered")
     self._goForward()
-    self.speedLeft.ChangeDutyCycle(self.halfSpeed)
+    self.speedLeft.ChangeDutyCycle(0)
     self.speedRight.ChangeDutyCycle(self.fullSpeed)
     
 
@@ -33,14 +33,14 @@ class ReflectiveSensor(mDriver):
     print("Right Close Sensor triggered")
     self._goForward()
     self.speedLeft.ChangeDutyCycle(self.fullSpeed)
-    self.speedRight.ChangeDutyCycle(self.halfSpeed)
+    self.speedRight.ChangeDutyCycle(0)
 
 
   def rightFarCallback(self):
     self._goForward()
     print("Right Far Sensor triggered")
     self.speedLeft.ChangeDutyCycle(self.fullSpeed)
-    self.speedRight.ChangeDutyCycle(self.quarterSpeed)
+    self.speedRight.ChangeDutyCycle(0)
 
   def initSensorPins(self):
     """Initializing Pins used for the sensors.
