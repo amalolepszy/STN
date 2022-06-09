@@ -1,13 +1,13 @@
 import argparse
-from gamepad_control import GamepadControl
+#from gamepad_control import GamepadControl
 from motor_driver import MotorDriver
 from reflective_sensor import ReflectiveSensor
 
-class LineFollower(GamepadControl, ReflectiveSensor, MotorDriver):
+class LineFollower(ReflectiveSensor, MotorDriver):
   """Main class used for controlling the line follower.
   """
-  def useGamePad(self):
-    self.goDirection(self.getGamepadDirection())
+  #def useGamePad(self):
+  #  self.goDirection(self.getGamepadDirection())
   def useReflective(self):
     self.ride_reflective()
 
